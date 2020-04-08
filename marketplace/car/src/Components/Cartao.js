@@ -26,10 +26,6 @@ const styles = theme => ({
 
 });
 
-
-
-
-
 //----------------------CSS GRID----------------//
 
 // const Container = styled.div`
@@ -86,42 +82,29 @@ span{
       box-shadow: none;
       border-style: none;
       border-radius: 10px;
-      
-  
-  
-  :hover {
-  background: #17c0eb;
+
+    :hover {
+        background: #17c0eb;
     } 
   }
   `
 
-
-
 class Cartao extends React.Component {
 
     render() {
+
         return (
-
             <ContainerDisplay>
-                {/* <p>{this.props.nome}</p>
-                <p>{this.props.preco}</p> */}
-                
-
-                    <div className="card">
-                        <img src={require("../imagens/azera.jpg")} />
-                        <span>HYUNDAI AZERA(2012)</span>
-                        <br/>
-                        
-                        <span>R$ 77.000 </span>
-                        <br/>
-                        <button>COMPRAR</button>
-
-                    </div>
-
-                
-
+                <div className="card">
+                    <img src={require("../imagens/azera.jpg")} />
+                    <span>{this.props.nome}</span>
+                    <br/>
+                    
+                    <span>R$ {this.props.preco}</span>
+                    <br/>
+                    <button>COMPRAR</button>
+                </div>
             </ContainerDisplay>
-
         )
     }
 }

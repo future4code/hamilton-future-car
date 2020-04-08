@@ -27,24 +27,13 @@ height: 6vh;
 border: solid 1px black;
 `
 
-
 const tela = "telacomprador"
 
 class App extends React.Component {
 constructor(props){
   super(props)
   this.state ={
-    produtos: 
-      {
-      id: "1",
-      name: "BMW 320",
-      shipping: 3,
-      description: "2.0 gasolina automático",
-      paymentMethod: "cartão de crédito",
-      price: 77000
-      
-    }
-    
+ 
   }
 
 }
@@ -69,12 +58,12 @@ constructor(props){
             <Menu> 
             Aqui é header
             </Menu>
-              <TelaComprador nome={this.state.produtos.name}
-                            preco={this.state.produtos.price}
-              />  
-              <Footer>
-                Aqui é o footer
-              </Footer>
+
+            <TelaComprador/> 
+
+            <Footer>
+              Aqui é o footer
+            </Footer>
           </Container>
         );
         case "telavendedor":
@@ -92,10 +81,6 @@ constructor(props){
         }
     
   }
-
   }
   
-
-
-
 export default App;
