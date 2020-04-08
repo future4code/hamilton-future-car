@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/TextField';
 import { withStyles} from '@material-ui/core/styles';
+import axios from 'axios';
 
 const Container = styled.div`
 width: 100%;
@@ -40,7 +41,12 @@ class TelaVendedor extends React.Component{
         super(props)
         this.state = {
             nomeDigitado: "",
-            email: "",
+            emailDigitado: "",
+            modeloDigitado: "",
+            valorDigitado: "",
+            descriçãoDigitado:"",
+            prazoDigitado: "",
+            pagamentoDigitado: "",
             aoSalvarBotao: 0
         }
     }
@@ -51,6 +57,63 @@ class TelaVendedor extends React.Component{
         )
         console.log(this.state.nomeDigitado)
     }
+
+    handleChangeEmailDigitado = event =>{
+        this.setState({
+            emailDigitado: event.target.value
+        })
+    }
+
+    handleModelo = event => {
+        this.setState({
+            modeloDigitado: event.target.value
+        })
+    }
+
+    handleValor = event => {
+        this.setState({
+            valorDigitado: event.target.value
+        })
+    }
+
+    handleDescrição = event => {
+        this.setState({
+            descriçãoDigitado: event.target.value
+        })
+    }
+    handlePrazo = event => {
+        this.setState({
+            prazoDigitado: event.target.value
+        })
+    }
+
+    handlePagamento = event => {
+        this.setState({
+            pagamentoDigitado: event.target.value
+        })
+    }
+
+    onClickEnviar = event => {
+        let body =  {
+            name: this.state.modeloDigitado,
+            description: this.state.descriçãoDigitado,
+            price: this.state.valorDigitado,
+            paymentMethod: this.state.pagamentoDigitado,
+            shipping: this.state.prazoDigitado
+        }
+        axios.post("https://us-central1-future-apis.cloudfunctions.net/futureCar/cars", body, {
+            headers: {
+                "Content-Type": "application/json"
+
+            }
+        }
+        ).then(()=>{
+            alert(" Carro cadastrado com sucesso")
+        }).catch(()=>{
+            alert("err")
+        }
+        )
+    }
     
     render(){
         return(
@@ -58,14 +121,21 @@ class TelaVendedor extends React.Component{
             <Container>
                 <Filtro>
                     <h2>Anuncie seu carro</h2>
-                    <Text onChange={this.handleChangeNomeDigitado} value={this.state.nomeDigitado}label="Nome do vendedor" variant="outlined" />
-                    <Text label="Email" variant="outlined" />
-                    <Text label="Modelo do carro" variant="outlined" />
-                    <Text label="Valor do Carro" variant="outlined" />
-                    <Text label="Descrição do Produto" variant="outlined" />
-                    <Text label="Prazo de entrega" variant="outlined" />
-                    <Text label="Pagamento" variant="outlined" />
-                    <Button variant="contained" color="primary">Enviar</Button>
+                    <Text onChange={this.handleChangeNomeDigitado} 
+                    value={this.state.nomeDigitado}label="Nome do vendedor" variant="outlined" />
+                    <Text onChange={this.handleChangeEmailDigitado}
+                    value={this.state.emailDigitado}label="Email" variant="outlined" />
+                    <Text onChange={this.handleModelo} 
+                    value={this.state.modeloDigitado} label="Modelo do carro" variant="outlined" />
+                    <Text onChange={this.handleValor} 
+                     value={this.state.valorDigitado} label="Valor do Carro" variant="outlined" />
+                    <Text onChange={this.handleDescrição} 
+                    value={this.state.descriçãoDigitado} label="Descrição do Produto" variant="outlined" />
+                    <Text onChange={this.handlePrazo}
+                    value={this.state.prazoDigitado} label="Prazo de entrega" variant="outlined" />
+                    <Text onChange={this.handlePagamento}
+                    value={this.state.pagamentoDigitado}  label="Pagamento" variant="outlined" />
+                    <Button onClick={this.onClickEnviar} variant="contained" color="primary">Enviar</Button>
                 </Filtro>
             </Container>
             </Background>
