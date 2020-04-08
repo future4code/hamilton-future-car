@@ -16,52 +16,59 @@ margin: auto;
 const Filtro = styled.div`
 width: 25%;
 height: 85%;
-padding: 2vw;
+padding: 1vw;
 margin: 2vw;
 display: flex;
 flex-direction: column;
-justify-content: center;
-border: solid 1px purple;
+justify-content: space-around;
+border-radius: 20px;
+box-shadow: 0px 10px 50px rgba(0,0,0,0.1);
+background-color: white;
 align-items: center;
 `
-
-const Text = styled.input`
-padding: 20px;
-margin: 20px;
+const Background = styled.div`
+background-color: #f0f1f2;
 `
 
-//     handleChange = event => {
-//     const conteudoDigitado = event.target.name
-//     this.setState({
-//         nomeDigitado: conteudoDigitado
-//     }
-//     )
-// }
+const Text = styled(Input)`
+margin-top: 20px;
+`
 
+   
 class TelaVendedor extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            nome: "",
+            nomeDigitado: "",
             email: "",
             aoSalvarBotao: 0
         }
     }
+    handleChangeNomeDigitado = event => {
+        this.setState({
+           nomeDigitado: event.target.value
+        }
+        )
+        console.log(this.state.nomeDigitado)
+    }
+    
     render(){
         return(
+            <Background>
             <Container>
                 <Filtro>
                     <h2>Anuncie seu carro</h2>
-                    <Input onChange={this.handleChange} value={this.state.value}label="Nome do vendedor" variant="outlined" />
-                    <Input label="Email" variant="outlined" />
-                    <Input label="Modelo do carro" variant="outlined" />
-                    <Input label="Valor do Carro" variant="outlined" />
-                    <Input label="Descrição do Produto" variant="outlined" />
-                    <Input label="Prazo de entrega" variant="outlined" />
-                    <Input label="Pagamento" variant="outlined" />
+                    <Text onChange={this.handleChangeNomeDigitado} value={this.state.nomeDigitado}label="Nome do vendedor" variant="outlined" />
+                    <Text label="Email" variant="outlined" />
+                    <Text label="Modelo do carro" variant="outlined" />
+                    <Text label="Valor do Carro" variant="outlined" />
+                    <Text label="Descrição do Produto" variant="outlined" />
+                    <Text label="Prazo de entrega" variant="outlined" />
+                    <Text label="Pagamento" variant="outlined" />
                     <Button variant="contained" color="primary">Enviar</Button>
                 </Filtro>
             </Container>
+            </Background>
         )
     }
 }
