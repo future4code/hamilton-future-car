@@ -2,51 +2,46 @@ import React from 'react';
 import styled from 'styled-components'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Popover from '@material-ui/core/Popover';
 
 //----------------------CSS MATERIAL-UI----------------//
+
+
 const styles = theme => ({
     root: {
         height: 180,
+
     },
     container: {
         display: 'flex',
+
     },
     paper: {
         margin: theme.spacing.unit,
+        
+
 
     },
     typography: {
-        margin: theme.spacing.unit * 0.5,
-
+        margin: theme.spacing.unit * 1,
+        background: '#f1f2f6',
+        opacity: 0.8
+        
     },
+
+
 
 });
 
+
 //----------------------CSS GRID----------------//
 
-// const Container = styled.div`
-//  height: 200px;
-//  width: 100px;
-//  border: solid 1px green;
-// `
-
 const ContainerDisplay = styled.div`
-    /* main{
-    margin: auto;
-    display:grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(4, 1fr);
-    margin: 7px;
-    max-width: 50vh;
-    height: 95vh;
-    grid-gap: 4%;
-  } */
-  
-  .card{
+
+
+main>.card{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,27 +52,33 @@ const ContainerDisplay = styled.div`
     height: 100%;
   }
   
-  .card>img{
+main>.card>img{
     
     height: 150px;
-    /* padding-left: 13px;
-    padding-top: 7px; */
+    padding-top: 5px;
+    
   }
   
-span{
-    /* margin-left: 7px; */
+main>div>span{
+    
     text-decoration: none;
     color: #0b4f6c;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
   }
   
-  button{
-      /* margin-left: 9px; */
-      height: 25px;
+u{
+    color: #575fcf;
+}  
+
+`
+const BotaoComprar = styled.button`
+
+      
+      height: 35px;
       width: 50%;
       color: #dfe6e9;
-      font-size: 14px;
+      font-size: 13px;
       background-color: #2d3436;
       box-shadow: none;
       border-style: none;
@@ -86,27 +87,97 @@ span{
     :hover {
         background: #17c0eb;
     } 
-  }
-  `
 
-class Cartao extends React.Component {
+`
+
+
+class SimpleFade extends React.Component {
+
+    state = {
+        checked: false,
+    };
+
+    state = {
+        anchorEl: null,
+    };
+
+    handleClick = event => {
+        this.setState({
+            anchorEl: event.currentTarget,
+        });
+    };
+
+    handleClose = () => {
+        this.setState({
+            anchorEl: null,
+        });
+    };
+
+    handleChange = () => {
+        this.setState(state => ({ checked: !state.checked }));
+    };
+
+
 
     render() {
+        const { classes } = this.props;
+        const { anchorEl } = this.state;
+        const open = Boolean(anchorEl);
 
         return (
-            <ContainerDisplay>
-                <div className="card">
-                    <img src={require("../imagens/azera.jpg")} />
-                    <span>{this.props.nome}</span>
-                    <br/>
-                    
-                    <span>R$ {this.props.preco}</span>
-                    <br/>
-                    <button>COMPRAR</button>
-                </div>
-            </ContainerDisplay>
+            <div className={classes.root}>
+                <ContainerDisplay>
+                    <main>
+                        <div className="card">
+                            <img src={require("../imagens/azera.jpg")} /><br/>
+                            <span>{this.props.nome}</span><br/>
+                            <span>R$ {this.props.preco}</span>
+                            <br />
+                            <BotaoComprar>COMPRAR</BotaoComprar>
+                            {this.Cores}
+                            <br />
+
+                            <Button
+                                aria-owns={open ? 'simple-popper' : undefined}
+                                aria-haspopup="true"
+                                variant="contained"
+                                onClick={this.handleClick}><u>detalhes</u>
+                            </Button>
+
+
+                            <Popover
+                                id="simple-popper"
+                                open={open}
+                                anchorEl={anchorEl}
+                                onClose={this.handleClose}
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'center',
+                                }}
+                                transformOrigin={{
+                                    vertical: 'top',
+                                    horizontal: 'center',
+                                }}>
+
+                                <Typography className={classes.typography}>
+                                    <i>3.0 MPFI GLS V6 24V GASOLINA 4P AUTOMÁTICO</i>
+                                    <p> <b>Nome vendedor:</b> Igor</p>
+                                    <p> <b>Método de pagamento:</b> Financiamento/À vista</p>
+                                    <p><b>Entrega:</b> 4 dias úteis</p>
+                                </Typography>
+
+                            </Popover>
+
+                            <br />
+
+                        </div>
+                    </main>
+                </ContainerDisplay>
+            </div>
         )
     }
 }
-
-export default Cartao
+SimpleFade.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+export default withStyles(styles)(SimpleFade);
