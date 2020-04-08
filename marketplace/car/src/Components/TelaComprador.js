@@ -22,10 +22,16 @@ align-items: center;
 `
 
 const Catalogo = styled.div`
-width: 68%;
-height: 85%;
-margin: 2vw;
-padding: 2vw;
+
+    margin: auto;
+    display:grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    margin: 7px;
+    width: 100%;
+    height: 100%;
+    grid-gap: 4%;
+    border: solid 1px red;
 
 `
 
@@ -45,6 +51,15 @@ class TelaComprador extends React.Component{
                     nome={this.props.nome}
                     preco={this.props.preco}
                     />
+                    <Cartao></Cartao>
+                    <Cartao></Cartao>
+                    <Cartao></Cartao>
+                    <Cartao></Cartao>
+                    <Cartao></Cartao>
+                    
+                    
+                    
+                    
                     
                 </Catalogo>
             </Container>
