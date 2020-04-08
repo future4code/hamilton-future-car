@@ -21,13 +21,14 @@ border: solid 1px blue;
 
 `
 const Footer = styled.div`
+
 width:100%;
 height: 6vh;
 border: solid 1px black;
 `
 
 
-const tela = "telavendedor"
+const tela = "telacomprador"
 
 class App extends React.Component {
 constructor(props){
