@@ -68,7 +68,7 @@ main>div>span{
   }
   
 u{
-    color: #575fcf;
+    color: whitesmoke;
 }  
 
 `
@@ -130,14 +130,16 @@ class SimpleFade extends React.Component {
                     <main>
                         <div className="card">
                             <img src={require("../imagens/azera.jpg")} /><br/>
-                            <span>{this.props.nome}</span><br/>
+                            <span>{this.props.modelo}</span><br/>
                             <span>R$ {this.props.preco}</span>
                             <br />
                             <BotaoComprar>COMPRAR</BotaoComprar>
                             {this.Cores}
                             <br />
 
-                            <Button
+                            <Button 
+                                variant="outlined" 
+                                color="primary"
                                 aria-owns={open ? 'simple-popper' : undefined}
                                 aria-haspopup="true"
                                 variant="contained"
@@ -160,10 +162,10 @@ class SimpleFade extends React.Component {
                                 }}>
 
                                 <Typography className={classes.typography}>
-                                    <i>3.0 MPFI GLS V6 24V GASOLINA 4P AUTOMÁTICO</i>
-                                    <p> <b>Nome vendedor:</b> Igor</p>
-                                    <p> <b>Método de pagamento:</b> Financiamento/À vista</p>
-                                    <p><b>Entrega:</b> 4 dias úteis</p>
+                                    <i>{this.props.descricao}</i>
+                                    <p> <b>Carro:</b> {this.props.modelo}</p>
+                                    <p> <b>Método de pagamento:</b> {this.props.pagamento}</p>
+                                    <p><b>Entrega:</b> {this.props.entrega} dias</p>
                                 </Typography>
 
                             </Popover>
