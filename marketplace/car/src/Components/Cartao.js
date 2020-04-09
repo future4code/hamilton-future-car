@@ -25,6 +25,10 @@ const styles = theme => ({
 
     },
     typography: {
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
         margin: theme.spacing.unit * 1,
         background: '#e0f7fa',
         boxShadow: '0 0 5px 3px #00bcd4',
@@ -48,15 +52,17 @@ main>.card{
     justify-content: center;
     flex-direction: column;
     margin: 5px;
-    border: 1px dashed #01baef;
-    width: 220px;
-    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 10px 50px rgba(0,0,0,0.1);
+    background-color: white;
+    width: 80%;
+    padding: 10px 0;
   }
   
 main>.card>img{
-    
+    border-radius: 20px;
     height: 150px;
-    padding-top: 5px;
+    
     
   }
   
@@ -75,7 +81,7 @@ u{
 `
 const BotaoComprar = styled.button`
 
-      margin-left: 23%;
+      margin: 0 auto;
       height: 35px;
       width: 50%;
       color: #dfe6e9;

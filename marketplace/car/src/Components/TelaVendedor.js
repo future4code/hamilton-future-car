@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { makeStyles } from '@material-ui/core/styles';
-import classNames from 'classnames';
+
+
 import { withStyles } from '@material-ui/core/styles';
-import MenuItem from '@material-ui/core/MenuItem';
+
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/TextField';
@@ -29,9 +29,10 @@ const styles = theme => ({
 });
 
 const currencies = [
+    
     {
         value: 'financiamento',
-        label: 'Financiamento'
+        label: 'Financiamento',
     },
     {
         value: 'cartao',
@@ -41,6 +42,7 @@ const currencies = [
         value: 'deposito',
         label: 'Depósito',
     },
+    
 
 ];
 const Container = styled.div`
@@ -77,7 +79,7 @@ class TextFields extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            pagamento: '',
+            pagamento: "financiamento",
             nomeDigitado: "",
             emailDigitado: "",
             modeloDigitado: "",
@@ -87,15 +89,18 @@ class TextFields extends React.Component {
             aoSalvarBotao: 0
         };
     }
-    handleChangePagamento = pagamento => event => {
-        this.setState({ [pagamento]: event.target.value });
+    handleChangePagamento = event => {
+        console.log(this.state.pagamento)
+        this.setState({ pagamento: event.target.value });
+        // console.log(this.state.pagamento)
+
     };
     handleChangeNomeDigitado = event => {
         this.setState({
             nomeDigitado: event.target.value
         }
         )
-        console.log(this.state.nomeDigitado)
+       
     }
 
     handleChangeEmailDigitado = event => {
@@ -177,10 +182,9 @@ class TextFields extends React.Component {
                         <TextField
                             id="standard-select-currency-native"
                             select
-
                             className={classes.textField}
                             value={this.state.pagamento}
-                            onChange={this.handleChangePagamento('pagamento')}
+                            onChange={this.handleChangePagamento}
                             SelectProps={{
                                 native: true,
                                 MenuProps: {
