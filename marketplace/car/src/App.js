@@ -27,7 +27,7 @@ height: 6vh;
 border: solid 1px black;
 `
 
-const tela = "telacomprador"
+const tela = "telavendedor"
 
 class App extends React.Component {
 constructor(props){

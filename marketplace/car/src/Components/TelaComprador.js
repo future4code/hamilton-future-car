@@ -137,7 +137,10 @@ class TelaComprador extends React.Component{
                             <Cartao
                             key= {produtos.id} 
                             preco= {produtos.price}
-                            nome= {produtos.name}
+                            modelo= {produtos.name}
+                            descricao= {produtos.description}
+                            pagamento= {produtos.paymentMethod}
+                            entrega= {produtos.shipping}
                             />
                         )
                     })}                                                                 
