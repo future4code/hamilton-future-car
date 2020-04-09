@@ -51,13 +51,14 @@ const SuaConta = styled.div`
 `
 
 const Footer = styled.div`
+position: relative;
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-between;
+justify-content: center;
 width:100%;
 height: 25%;
-border-top: #fbfbff 2px groove;
+border-top: #757575 2px groove;
 background: rgba(11,79,96,1);
 `
 
@@ -67,7 +68,7 @@ justify-content: space-evenly;
 align-items: center;
 height: 35%;
 width: 37%;
-border-bottom: 1px dashed white;
+/* border-bottom: 1px dashed white; */
 `
 
 const RedesSociais = styled.div`
@@ -140,11 +141,9 @@ constructor(props){
                   <p>Sábado, das 8h às 18h</p>
                 </Texto>
               </Contato>
-              <RedesSociais>
-                <div>
-                <Img src={Logo}/>
-                </div>
-              </RedesSociais>
+              {/* <RedesSociais>
+                
+              </RedesSociais> */}
             </Footer>
           </Container>
             
@@ -163,7 +162,22 @@ constructor(props){
             <TelaComprador/> 
 
             <Footer>
-              Aqui é o footer
+              <Contato>
+                <DivIcon>
+                  <Phone/>
+                </DivIcon>
+                <Texto>
+                <p>Atendimento</p>
+                  <p>1001 -0101</p>
+                </Texto>
+                <Texto>
+                  <p>De Segunda à Sexta, das 8h às 20h</p>
+                  <p>Sábado, das 8h às 18h</p>
+                </Texto>
+              </Contato>
+              {/* <RedesSociais>
+                
+              </RedesSociais> */}
             </Footer>
           </Container>
         );
@@ -179,8 +193,23 @@ constructor(props){
             </Header>
               <TelaVendedor/>  
               <Footer>
-                Aqui é o footer
-              </Footer>
+              <Contato>
+                <DivIcon>
+                  <Phone/>
+                </DivIcon>
+                <Texto>
+                <p>Atendimento</p>
+                  <p>1001 -0101</p>
+                </Texto>
+                <Texto>
+                  <p>De Segunda à Sexta, das 8h às 20h</p>
+                  <p>Sábado, das 8h às 18h</p>
+                </Texto>
+              </Contato>
+              {/* <RedesSociais>
+                
+              </RedesSociais> */}
+            </Footer>
           </Container>
         );
         }
