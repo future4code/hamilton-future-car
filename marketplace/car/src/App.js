@@ -93,6 +93,7 @@ const Texto = styled.p`
   font-size: 14px;
 `
 
+
 class App extends React.Component {
 constructor(props){
   super(props)

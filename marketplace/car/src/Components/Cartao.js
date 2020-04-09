@@ -20,15 +20,16 @@ const styles = theme => ({
     },
     paper: {
         margin: theme.spacing.unit,
-        
+
 
 
     },
     typography: {
         margin: theme.spacing.unit * 1,
-        background: '#f1f2f6',
-        opacity: 0.8
-        
+        background: '#e0f7fa',
+        boxShadow: '0 0 5px 3px #00bcd4',
+        padding: '5px'
+
     },
 
 
@@ -74,7 +75,7 @@ u{
 `
 const BotaoComprar = styled.button`
 
-      
+      margin-left: 23%;
       height: 35px;
       width: 50%;
       color: #dfe6e9;
@@ -129,21 +130,17 @@ class SimpleFade extends React.Component {
                 <ContainerDisplay>
                     <main>
                         <div className="card">
-                            <img src={require("../imagens/azera.jpg")} /><br/>
-                            <span>{this.props.modelo}</span><br/>
+                            <img src={require("../imagens/azera.jpg")} /><br />
+                            <span>{this.props.modelo}</span><br />
                             <span>R$ {this.props.preco}</span>
                             <br />
-                            <BotaoComprar>COMPRAR</BotaoComprar>
-                            {this.Cores}
-                            <br />
-
-                            <Button 
-                                variant="outlined" 
-                                color="primary"
+                            <Button
+                                variant="contained"
+                                size="medium"
+                                color="secondary"
                                 aria-owns={open ? 'simple-popper' : undefined}
                                 aria-haspopup="true"
-                                variant="contained"
-                                onClick={this.handleClick}><u>detalhes</u>
+                                onClick={this.handleClick}><span>detalhes</span>
                             </Button>
 
 
@@ -166,11 +163,11 @@ class SimpleFade extends React.Component {
                                     <p> <b>Carro:</b> {this.props.modelo}</p>
                                     <p> <b>Método de pagamento:</b> {this.props.pagamento}</p>
                                     <p><b>Entrega:</b> {this.props.entrega} dias</p>
+                                    <BotaoComprar>COMPRAR</BotaoComprar>
                                 </Typography>
 
                             </Popover>
 
-                            <br />
 
                         </div>
                     </main>
