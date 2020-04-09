@@ -1,26 +1,35 @@
 import React from 'react';
 import styled from 'styled-components'
+import FutureCar from '../imagens/futurecar.png'
+import FloatingActionButtonSize from './BotaoFlutuante';
 
 
-const DivButton = styled.div`
-  height: 100px;
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 1px orange;
-  margin: auto;
-  
-`
+
 const Container = styled.div`
+background-image: url(${props => props.img});
+background-repeat: no-repeat;
+background-position: top;
 width: 100%;
 height: 88%;
-border: solid 1px red;
 display: flex;
-
 `
 
+const ContainerButton = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 100%;
+align-items: center;
+justify-content: end;
+`
 
+const DivButton = styled.div`
+  height: 25vw;
+  border-radius: 0%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
 
 
 class LandingPage extends React.Component {
@@ -30,11 +39,14 @@ class LandingPage extends React.Component {
     
     
     return (
-      <Container>
-          <DivButton>
-          <button>Comprador</button>
-          <button>Vendedor</button>
-          </DivButton>
+      <Container img={FutureCar}>
+        <ContainerButton>
+        <DivButton>
+          <FloatingActionButtonSize
+          funcao = {this.props.funcao2}
+          />
+        </DivButton>
+        </ContainerButton>
       </Container>
      
     );
