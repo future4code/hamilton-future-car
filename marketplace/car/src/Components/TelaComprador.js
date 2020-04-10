@@ -103,7 +103,6 @@ class TextFields extends React.Component {
     }
 
     
-
     componentDidMount() {
         axios.get("https://us-central1-future-apis.cloudfunctions.net/futureCar/cars")
             .then(res => {
@@ -154,6 +153,8 @@ class TextFields extends React.Component {
    
 
     render() {
+        console.log(this.state.produtos)
+
         const { classes } = this.props;
 
         const produtosFiltrados = this.state.produtos.filter(produtos => {
@@ -213,6 +214,7 @@ class TextFields extends React.Component {
                                 descricao={produtos.description}
                                 pagamento={produtos.paymentMethod}
                                 entrega={produtos.shipping}
+                                id={produtos.id}
                             />
                         )
                     })}

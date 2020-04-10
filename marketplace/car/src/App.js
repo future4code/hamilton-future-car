@@ -23,7 +23,7 @@ justify-content: space-between;
 `
 const Header = styled.div`
 width:100%;
-min-height: 5vw;
+min-height: 4vw;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -39,21 +39,31 @@ rgba(251,251,255,1) 90%
 
 const Img = styled.img`
   width: 3vw;
-  padding: 0 1vw;
-  border-radius: 40%;
+  margin: 0 1vw;
+  border-radius: 10px;
+  border: #ff5c5c 2px solid;
   cursor: pointer;
 `
 
 const SuaConta = styled.div`
+  border: #ff5c5c 2px solid;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   color: #ff595c;
-  padding-right: 1vw;
+  margin-right: 1vw;
   font-weight: 900;
+  height: 70%;
+  padding: 0 3px;
+  cursor: pointer;
 `
 
 const Footer = styled.div`
 position: relative;
 display: flex;
-flex-direction: column;
+flex-direction: row;
 align-items: center;
 justify-content: center;
 width:100%;
@@ -64,34 +74,49 @@ box-shadow: 1px 1px 10px;
 
 const Contato = styled.div`
 display: flex;
-justify-content: space-evenly;
+justify-content: space-around;
+padding-left: 33%;
 align-items: center;
-height: 35%;
-width: 37%;
-/* border-bottom: 1px dashed white; */
+height: 50%;
+width: 17%;
 `
 
 const RedesSociais = styled.div`
 display: flex;
-justify-content: space-evenly;
+justify-content: flex-start;
 align-items: center;
+padding-left: 1%;
 height: 40%;
-width: 80%;
+width: 49%;
+border-left: 1px dashed white;
 `
 const DivIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px dashed #01baef;
+  border: 2px dashed rgba(11,79,96,1);
   background-color: white;
   border-radius: 50%;
   height: 2vw;
   width: 2vw;
 `
+
+const DivIcon2 = styled.div`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed rgba(11,79,96,1);
+  background-color: white;
+  border-radius: 5px;
+  height: 2vw;
+  width: 2vw;
+  margin-right: 1vw;
+`
 const Texto = styled.p`
   color: white;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
 `
 
 
@@ -122,7 +147,7 @@ constructor(props){
               <Img src={Logo}
               onClick={this.onClickMudarTelaLanding}/>
             </div>
-            <SuaConta>Sua Conta</SuaConta>
+            <SuaConta><span>Sua Conta</span></SuaConta>
             </Header>
             <LandingPage
             funcao2 = {this.onClickMudarTelaBotao}
@@ -133,17 +158,23 @@ constructor(props){
                   <Phone/>
                 </DivIcon>
                 <Texto>
-                <p>Atendimento</p>
+                <h3>Atendimento</h3>
                   <p>1001 -0101</p>
-                </Texto>
-                <Texto>
-                  <p>De Segunda à Sexta, das 8h às 20h</p>
-                  <p>Sábado, das 8h às 18h</p>
+                  <h4>De Segunda à Sexta, das 8h às 20h</h4>
+                  <h4>Sábado, das 8h às 18h</h4>
                 </Texto>
               </Contato>
-              {/* <RedesSociais>
-
-              </RedesSociais> */}
+              <RedesSociais>
+                <DivIcon2>
+                  <img src={FacebookIcon}/>
+                </DivIcon2>
+                <DivIcon2>
+                  <img src={InstagramIcon}/>
+                </DivIcon2>
+                <DivIcon2>
+                  <img src={WhatsappIcon}/>
+                </DivIcon2>
+              </RedesSociais>
             </Footer>
           </Container>
 
@@ -167,17 +198,23 @@ constructor(props){
                   <Phone/>
                 </DivIcon>
                 <Texto>
-                <p>Atendimento</p>
+                <h3>Atendimento</h3>
                   <p>1001 -0101</p>
-                </Texto>
-                <Texto>
-                  <p>De Segunda à Sexta, das 8h às 20h</p>
-                  <p>Sábado, das 8h às 18h</p>
+                  <h4>De Segunda à Sexta, das 8h às 20h</h4>
+                  <h4>Sábado, das 8h às 18h</h4>
                 </Texto>
               </Contato>
-              {/* <RedesSociais>
-
-              </RedesSociais> */}
+              <RedesSociais>
+                <DivIcon2>
+                  <img src={FacebookIcon}/>
+                </DivIcon2>
+                <DivIcon2>
+                  <img src={InstagramIcon}/>
+                </DivIcon2>
+                <DivIcon2>
+                  <img src={WhatsappIcon}/>
+                </DivIcon2>
+              </RedesSociais>
             </Footer>
           </Container>
         );
@@ -191,24 +228,30 @@ constructor(props){
               </div>
             <SuaConta>Sua Conta</SuaConta>
             </Header>
-              <TelaVendedor/>
-              <Footer>
+            <TelaVendedor/>
+            <Footer>
               <Contato>
                 <DivIcon>
                   <Phone/>
                 </DivIcon>
                 <Texto>
-                <p>Atendimento</p>
+                <h3>Atendimento</h3>
                   <p>1001 -0101</p>
-                </Texto>
-                <Texto>
-                  <p>De Segunda à Sexta, das 8h às 20h</p>
-                  <p>Sábado, das 8h às 18h</p>
+                  <h4>De Segunda à Sexta, das 8h às 20h</h4>
+                  <h4>Sábado, das 8h às 18h</h4>
                 </Texto>
               </Contato>
-              {/* <RedesSociais>
-
-              </RedesSociais> */}
+              <RedesSociais>
+                <DivIcon2>
+                  <img src={FacebookIcon}/>
+                </DivIcon2>
+                <DivIcon2>
+                  <img src={InstagramIcon}/>
+                </DivIcon2>
+                <DivIcon2>
+                  <img src={WhatsappIcon}/>
+                </DivIcon2>
+              </RedesSociais>
             </Footer>
           </Container>
         );

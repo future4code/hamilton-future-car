@@ -136,7 +136,7 @@ class SimpleFade extends React.Component {
                 <ContainerDisplay>
                     <main>
                         <div className="card">
-                            <img src={require("../imagens/azera.jpg")} /><br />
+                            <img src={require(`../imagens/${this.props.id}.jpg`)} /><br />
                             <span>{this.props.modelo}</span><br />
                             <span>R$ {this.props.preco}</span>
                             <br />
