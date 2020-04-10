@@ -11,7 +11,7 @@ import Popover from '@material-ui/core/Popover';
 
 const styles = theme => ({
     root: {
-        height: 180,
+        height: 450,
 
     },
     container: {
@@ -32,8 +32,7 @@ const styles = theme => ({
         margin: theme.spacing.unit * 1,
         background: '#e0f7fa',
         boxShadow: '0 0 5px 3px #00bcd4',
-        padding: '5px'
-
+        padding: '5px',
     },
 
 
@@ -55,13 +54,14 @@ main>.card{
     border-radius: 20px;
     box-shadow: 0px 10px 50px rgba(0,0,0,0.1);
     background-color: white;
-    width: 80%;
-    padding: 10px 0;
+    width: 70%;
+    height: 100%;
+    padding: 2vw 1vw;
   }
   
 main>.card>img{
     border-radius: 20px;
-    height: 150px;
+    width: 10vw;
     
     
   }
@@ -82,7 +82,7 @@ u{
 const BotaoComprar = styled.button`
 
       margin: 0 auto;
-      height: 35px;
+      height: 2vw;
       width: 50%;
       color: #dfe6e9;
       font-size: 13px;

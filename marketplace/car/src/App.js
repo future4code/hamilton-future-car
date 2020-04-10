@@ -23,16 +23,16 @@ justify-content: space-between;
 `
 const Header = styled.div`
 width:100%;
-height: 7vh;
+min-height: 5vw;
 display: flex;
 justify-content: space-between;
 align-items: center;
-border-bottom: #757575 2px ridge;
+box-shadow: 1px 1px 10px;
 background: rgb(251,251,255);
 background: linear-gradient(
-90deg, 
-rgba(251,251,255,1) 10%, 
-rgba(11,79,96,1) 50%, 
+90deg,
+rgba(251,251,255,1) 10%,
+rgba(11,79,96,1) 50%,
 rgba(251,251,255,1) 90%
 );
 `
@@ -58,8 +58,8 @@ align-items: center;
 justify-content: center;
 width:100%;
 height: 25%;
-border-top: #757575 2px groove;
 background: rgba(11,79,96,1);
+box-shadow: 1px 1px 10px;
 `
 
 const Contato = styled.div`
@@ -117,16 +117,16 @@ constructor(props){
       case "landingpage":
         return (
           <Container>
-            <Header> 
+            <Header>
             <div>
               <Img src={Logo}
               onClick={this.onClickMudarTelaLanding}/>
             </div>
             <SuaConta>Sua Conta</SuaConta>
             </Header>
-            <LandingPage 
+            <LandingPage
             funcao2 = {this.onClickMudarTelaBotao}
-            />  
+            />
             <Footer>
               <Contato>
                 <DivIcon>
@@ -142,16 +142,16 @@ constructor(props){
                 </Texto>
               </Contato>
               {/* <RedesSociais>
-                
+
               </RedesSociais> */}
             </Footer>
           </Container>
-            
+
         );
       case "telacomprador":
         return(
           <Container>
-            <Header> 
+            <Header>
             <div>
               <Img src={Logo}
               onClick={this.onClickMudarTelaLanding}/>
@@ -159,7 +159,7 @@ constructor(props){
             <SuaConta>Sua Conta</SuaConta>
             </Header>
 
-            <TelaComprador/> 
+            <TelaComprador/>
 
             <Footer>
               <Contato>
@@ -176,7 +176,7 @@ constructor(props){
                 </Texto>
               </Contato>
               {/* <RedesSociais>
-                
+
               </RedesSociais> */}
             </Footer>
           </Container>
@@ -184,14 +184,14 @@ constructor(props){
         case "telavendedor":
         return(
           <Container>
-            <Header> 
+            <Header>
             <div>
               <Img src={Logo}
               onClick={this.onClickMudarTelaLanding}/>
               </div>
             <SuaConta>Sua Conta</SuaConta>
             </Header>
-              <TelaVendedor/>  
+              <TelaVendedor/>
               <Footer>
               <Contato>
                 <DivIcon>
@@ -207,14 +207,14 @@ constructor(props){
                 </Texto>
               </Contato>
               {/* <RedesSociais>
-                
+
               </RedesSociais> */}
             </Footer>
           </Container>
         );
         }
-    
+
   }
   }
-  
+
 export default App;

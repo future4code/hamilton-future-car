@@ -14,6 +14,8 @@ const styles = theme => ({
     container: {
         display: 'flex',
         flexWrap: 'wrap',
+        justifyContent: 'center',
+        margin: 100,
     },
     textField: {
         marginLeft: theme.spacing.unit,
@@ -21,7 +23,6 @@ const styles = theme => ({
         width: 200,
     },
     dense: {
-        marginTop: 19,
     },
     menu: {
         width: 200,
@@ -47,17 +48,18 @@ const currencies = [
 ];
 const Container = styled.div`
 width: 100%;
-height: 88vh;
+height: 82vh;
 display: flex;
 justify-content: center;
+align-items: center;
 margin: auto;
 `
 
 const Filtro = styled.div`
 width: 25%;
-height: 85%;
+height: 80%;
 padding: 1vw;
-margin: 2vw;
+margin: 0vw;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
