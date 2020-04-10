@@ -78,11 +78,12 @@ align-items: center;
 `
 
 const Catalogo = styled.div`
-    display:grid;
+    margin-top: 7vh;
+    display: grid;
     grid-template-rows: repeat(2, 18vw);
-    grid-template-columns: repeat(3, 18vw);
-    width: 60%;
-    grid-gap: 4vw 0; 
+    grid-template-columns: repeat(3, 30%);
+    width: 50%;
+    grid-gap: 1vw; 
   
 `
 
