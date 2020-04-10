@@ -12,10 +12,7 @@ import axios from 'axios';
 
 const styles = theme => ({
     container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        margin: 100,
+        marginTop: '20px',
     },
     textField: {
         marginLeft: theme.spacing.unit,
@@ -48,12 +45,21 @@ const currencies = [
 ];
 const Container = styled.div`
 width: 100%;
-height: 82vh;
+height: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
 margin: auto;
+
 `
+
+const Background = styled.div`
+background-color: #f0f1f2;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+ `
 
 const Filtro = styled.div`
 width: 25%;
@@ -68,10 +74,6 @@ box-shadow: 0px 10px 50px rgba(0,0,0,0.1);
 background-color: white;
 align-items: center;
 `
-
-const Background = styled.div`
-background-color: #f0f1f2;
- `
 
 const Text = styled(Input)`
 margin-top: 20px;
