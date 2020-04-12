@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
-
 import { withStyles } from '@material-ui/core/styles';
-
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/TextField';
@@ -40,9 +37,8 @@ const currencies = [
         value: 'deposito',
         label: 'Depósito',
     },
-    
-
 ];
+
 const Container = styled.div`
 width: 100%;
 height: 100%;
@@ -93,12 +89,12 @@ class TextFields extends React.Component {
             aoSalvarBotao: 0
         };
     }
+
     handleChangePagamento = event => {
         console.log(this.state.pagamento)
         this.setState({ pagamento: event.target.value });
-        // console.log(this.state.pagamento)
-
     };
+
     handleChangeNomeDigitado = event => {
         this.setState({
             nomeDigitado: event.target.value

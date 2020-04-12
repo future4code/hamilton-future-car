@@ -4,7 +4,6 @@ import FutureCar from '../imagens/futurecar.png'
 import FloatingActionButtonSize from './BotaoFlutuante';
 
 
-
 const Container = styled.div`
 background-image: url(${props => props.img});
 background-repeat: no-repeat;
@@ -34,12 +33,9 @@ const DivButton = styled.div`
   align-items: center;
 `
 
-
 class LandingPage extends React.Component {
   
-
   render(){
-    
     
     return (
       <Container img={FutureCar}>
@@ -51,10 +47,8 @@ class LandingPage extends React.Component {
         </DivButton>
         </ContainerButton>
       </Container>
-     
     );
   }
-
   }
   
 

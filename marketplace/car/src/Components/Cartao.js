@@ -8,21 +8,15 @@ import Popover from '@material-ui/core/Popover';
 
 //----------------------CSS MATERIAL-UI----------------//
 
-
 const styles = theme => ({
     root: {
         height: 450,
-
     },
     container: {
         display: 'flex',
-
     },
     paper: {
         margin: theme.spacing.unit,
-
-
-
     },
     typography: {
         display: 'flex',
@@ -34,16 +28,11 @@ const styles = theme => ({
         boxShadow: '0 0 5px 3px #00bcd4',
         padding: '5px',
     },
-
-
-
 });
-
 
 //----------------------CSS GRID----------------//
 
 const ContainerDisplay = styled.div`
-
 
 main>.card{
     display: flex;
@@ -62,12 +51,9 @@ main>.card{
 main>.card>img{
     border-radius: 20px;
     width: 10vw;
-    
-    
   }
   
 main>div>span{
-    
     text-decoration: none;
     color: #0b4f6c;
     font-weight: bold;
@@ -77,7 +63,6 @@ main>div>span{
 u{
     color: whitesmoke;
 }  
-
 `
 const BotaoComprar = styled.button`
 
@@ -94,7 +79,6 @@ const BotaoComprar = styled.button`
     :hover {
         background: #17c0eb;
     } 
-
 `
 
 
@@ -123,8 +107,6 @@ class SimpleFade extends React.Component {
     handleChange = () => {
         this.setState(state => ({ checked: !state.checked }));
     };
-
-
 
     render() {
         const { classes } = this.props;
@@ -173,8 +155,7 @@ class SimpleFade extends React.Component {
                                 </Typography>
 
                             </Popover>
-
-
+                            
                         </div>
                     </main>
                 </ContainerDisplay>
