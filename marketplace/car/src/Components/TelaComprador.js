@@ -8,8 +8,6 @@ import Input from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 
 
-
-
 const styles = theme => ({
     container: {
         display: 'flex',
@@ -55,13 +53,11 @@ const Text = styled(Input)`
 margin-top: 20px;
 `
 
-
 const Container = styled.div`
 width: 100%;
 display: flex;
 align-items: flex-start;
 justify-content: space-evenly;
-
 `
 
 const FiltroDois = styled.div`
@@ -84,7 +80,6 @@ const Catalogo = styled.div`
     grid-template-columns: repeat(3, 30%);
     width: 50%;
     grid-gap: 1vw; 
-  
 `
 
 class TextFields extends React.Component {
@@ -92,8 +87,7 @@ class TextFields extends React.Component {
         super(props)
 
         this.state = {
-            produtos: [
-            ],
+            produtos: [],
             inputNome: "",
             inputMin: null,
             inputMax: Infinity,
@@ -106,7 +100,6 @@ class TextFields extends React.Component {
     componentDidMount() {
         axios.get("https://us-central1-future-apis.cloudfunctions.net/futureCar/cars")
             .then(res => {
-
                 this.setState({ produtos: res.data.cars })
             }).catch(err => {
                 console.log(err)
@@ -125,7 +118,6 @@ class TextFields extends React.Component {
         else {
             this.setState({ inputMin: e.target.value })
         }
-
     }
 
     onChangeMax = (e) => {
@@ -151,7 +143,6 @@ class TextFields extends React.Component {
     }
 
    
-
     render() {
         console.log(this.state.produtos)
 
@@ -182,7 +173,6 @@ class TextFields extends React.Component {
                     <TextField
                         id="standard-select-currency-native"
                         select
-
                         className={classes.textField}
                         value={this.state.metodoPagamento}
                         onChange={this.onChangePagamento}
@@ -201,8 +191,6 @@ class TextFields extends React.Component {
                             </option>
                         ))}
                     </TextField>
-                    
-
                 </FiltroDois>
                 <Catalogo>
                     {produtosFiltrados.map(produtos => {
